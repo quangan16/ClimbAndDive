@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6efbb620a67baf84d11fb88e8e6189, type: 3}
+  m_Name: Game.FactoryAudio
+  m_EditorClassIdentifier:
+  _sfxEggShake: {fileID: 11400000, guid: fa25e339bb48a3f4a99688bf69e01b76, type: 2}
+  _sfxPetWhoosh: {fileID: 11400000, guid: fb65c7ffd15b62f44a42708f050b3649, type: 2}
+  _sfxPetRarityAppear: {fileID: 11400000, guid: caff4a468970ee04bbb6431ef390e813, type: 2}
+  _sfxPetDivineAppear: {fileID: 11400000, guid: fc19e29a84790f34f8d3cf2ac6078ca7, type: 2}
+  _sfxCoinClaim: {fileID: 11400000, guid: f4eef29b09eda1944804ec2b85f64d78, type: 2}
+  _sfxGemClaim: {fileID: 11400000, guid: 5c65e31722d388b4386cee84d832fdd3, type: 2}
+  _sfxCupClaim: {fileID: 11400000, guid: 926a6ca9fdc385f47959482dcedac500, type: 2}
+  _uiButtonClick: {fileID: 11400000, guid: 5aadfd599a82ef94e8c7a2c928517957, type: 2}

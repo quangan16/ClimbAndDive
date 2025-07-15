@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3dfcbec3c9f667103023ae506f9b98, type: 3}
+  m_Name: Map1_Type1_1_Common_Woofy
+  m_EditorClassIdentifier:
+  ID: Map1_Type1_1_Common_Woofy
+  Map: 1
+  EggType: 0
+  RarityType: 0
+  Name: Woofy
+  CoinFactor: 1.5
+  Thumbnail: {fileID: 21300000, guid: e010887a255d1c94599b744875f757a2, type: 2}
+  AssetReference:
+    m_AssetGUID: 5e71a7bc6bd8bac4dbdbcdc52c349d1c
+    m_SubObjectName:
+    m_SubObjectType:

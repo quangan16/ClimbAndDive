@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c7f29b0dba6b9d7dc60da6ff77670d, type: 3}
+  m_Name: FTS_Space_1
+  m_EditorClassIdentifier:
+  _ID: 1
+  _infos:
+  - SpaceName: Ground
+    _logicHeight: 0
+    Skybox: {fileID: 2100000, guid: a76218fbb076d4d4abc26016d59d8ee1, type: 2}
+    Icon: {fileID: 0}
+  - SpaceName: Over
+    _logicHeight: 25K
+    Skybox: {fileID: 2100000, guid: 45e6489d389a2294ebfa976704ca07d5, type: 2}
+    Icon: {fileID: 0}
+  - SpaceName: 150
+    _logicHeight: 150K
+    Skybox: {fileID: 2100000, guid: 72429ae5e307922428e9a5131870f3a8, type: 2}
+    Icon: {fileID: 0}
+  - SpaceName: 500
+    _logicHeight: 500K
+    Skybox: {fileID: 2100000, guid: 7c9099f406bff1e4e9908e798fa46da1, type: 2}
+    Icon: {fileID: 0}
+  - SpaceName: 1m
+    _logicHeight: 1M
+    Skybox: {fileID: 2100000, guid: aa868abca4b4f3e4bbaf8c6cf1bd8bd7, type: 2}
+    Icon: {fileID: 0}
+  _realWorldHeight: 1000
+  _spaceThumbnail: {fileID: 21300000, guid: 61a1f6eb1ded46549a65d357c51905be, type: 2}
+  _thumbnail: {fileID: 0}
+  _rocketProbabilities:
+  - 50
+  - 20
+  - 15
+  - 10
+  - 5
+  _rocketQuantityMax: 100
+  _rocketStableQuantityRate: 0.95

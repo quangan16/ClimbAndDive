@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96797508d3a860f7fa42035dd14d98a3, type: 3}
+  m_Name: 9_Wing_ButterflyGalaxy
+  m_EditorClassIdentifier:
+  ID: 9_Wing_ButterflyGalaxy
+  WingName: Butterfly Galaxy
+  Description: Climb Speed
+  Energy: 360
+  Cost: 2.8M
+  UnlockType: 1
+  Thumbnail: {fileID: 21300000, guid: 0c1014bb3b5f9bb4485af9f3a24ee3ca, type: 2}
+  AssetReference:
+    m_AssetGUID: ec75c2b90311284408694a2ebb9c26e5
+    m_SubObjectName:
+    m_SubObjectType:

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed695e9da2568dfd92bab1f28d51fb33, type: 3}
+  m_Name: Game.Factory_CTJ_World
+  m_EditorClassIdentifier:
+  _configs:
+  - {fileID: 11400000, guid: 87335c23850b9934091e4da4b2a4103d, type: 2}
+  - {fileID: 11400000, guid: 219e58c0e20c01143931fdd83719c58e, type: 2}
+  - {fileID: 11400000, guid: 9c17e2d440ab95843af3fe7b05e11d9d, type: 2}
+  - {fileID: 11400000, guid: 84f557d00ddbbb344b3563102651eb40, type: 2}
+  _selectionPopup: {fileID: 1955498128189077, guid: d7c391159067ad14fa32706c754aee49, type: 2}
+  _selectionHome: {fileID: 1351673615255674, guid: 7dc8f8d860601894d836eaf0dc52ba12, type: 2}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597ce6caa0e6ff953c5f97bf60bda02c, type: 3}
+  m_Name: 7_CharacterSkin_Character_03_DogDay Variant
+  m_EditorClassIdentifier:
+  ID: 3_CharacterSkin_Character_03_DogDay Variant
+  SkinName: Orange Dog
+  Description: Climb Speed
+  Energy: 54
+  Cost: 10M
+  UnlockType: 1
+  Thumbnail: {fileID: 21300000, guid: 97d17a2df2fe4d949b9b61ff78b83ffa, type: 2}
+  Avatar: {fileID: 21300000, guid: 613671574af52854cb1809579cb84aaf, type: 2}
+  AssetReference:
+    m_AssetGUID: 73b16a844ce6fb64fb19c7e461c76e5a
+    m_SubObjectName:
+    m_SubObjectType:

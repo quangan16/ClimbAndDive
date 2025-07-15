@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb596d9d030dea6e2d5381de656d9ff, type: 3}
+  m_Name: Map1_EggGacha_Cost_1M
+  m_EditorClassIdentifier:
+  Map: 1
+  EggType: 2
+  CostPerRoll: 1M
+  Rarities:
+  - Type: 0
+    Probability: 52.41
+  - Type: 1
+    Probability: 27.39
+  - Type: 2
+    Probability: 10.37
+  - Type: 3
+    Probability: 6.71
+  - Type: 4
+    Probability: 3.12
+  Egg: {fileID: 114383772168404103, guid: cebed3126e8c8754cbe7c41b9781cd3c, type: 2}

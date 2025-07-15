@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3dfcbec3c9f667103023ae506f9b98, type: 3}
+  m_Name: Map2_Type1_5_Divine_Unicorn
+  m_EditorClassIdentifier:
+  ID: Map2_Type1_5_Divine_Unicorn
+  Map: 2
+  EggType: 0
+  RarityType: 4
+  Name: Unicorn
+  CoinFactor: 500K
+  Thumbnail: {fileID: 21300000, guid: dfb7f3bf9ca325a4eb0b2277c499edac, type: 2}
+  AssetReference:
+    m_AssetGUID: 8a45f35142488444489d378a6b224d99
+    m_SubObjectName:
+    m_SubObjectType:

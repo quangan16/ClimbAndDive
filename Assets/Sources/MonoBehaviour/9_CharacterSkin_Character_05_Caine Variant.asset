@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597ce6caa0e6ff953c5f97bf60bda02c, type: 3}
+  m_Name: 9_CharacterSkin_Character_05_Caine Variant
+  m_EditorClassIdentifier:
+  ID: 5_CharacterSkin_Character_05_Caine Variant
+  SkinName: Caine
+  Description: Climb Speed
+  Energy: 1K
+  Cost: 984M
+  UnlockType: 1
+  Thumbnail: {fileID: 21300000, guid: 90d7598b637b2644a8c2fe8f6c1c284c, type: 2}
+  Avatar: {fileID: 21300000, guid: 5882e38180c32f249b64eac81296175f, type: 2}
+  AssetReference:
+    m_AssetGUID: 54f6797da41d8a84ba6e31689b554ba0
+    m_SubObjectName:
+    m_SubObjectType:

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 311128189, guid: eaeffe74238c04f1578e5113652268e2, type: 3}
+  m_Name: CFramework.CFactory
+  m_EditorClassIdentifier:
+  _sceneLoaderFadeInDuration: 0.2
+  _sceneLoaderLoadDuration: 0.1
+  _sceneLoaderFadeOutDuration: 0.2
+  _sceneLoaderPrefab: {fileID: 0}
+  _poolTextDamage: {fileID: 11400000, guid: f907e6481eca2bc42b42e36583b5f092, type: 2}
+  _uiNotificationText: {fileID: 1694725865954150, guid: 475463a506022a74cbc458f10b4a5d5d, type: 2}
+  _internetChecking:
+    m_AssetGUID: c18005002afe2f14aa79311613dbec26
+    m_SubObjectName:
+    m_SubObjectType:

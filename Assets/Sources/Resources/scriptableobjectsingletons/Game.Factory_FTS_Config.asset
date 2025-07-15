@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92892214f952a84560b99e536c4ba41e, type: 3}
+  m_Name: Game.Factory_FTS_Config
+  m_EditorClassIdentifier:
+  _minFlyHeight: 5
+  _rockets:
+  - {fileID: 1089269865500996, guid: 6a586897aacd3c54b98953db5d8abfd7, type: 2}
+  - {fileID: 1263318736096446, guid: 10dedbcf245851f409a2d8e2f0e72daa, type: 2}
+  - {fileID: 1279119288101639, guid: 4a5f1663c63912542a157d4451ae84c7, type: 2}
+  - {fileID: 1447698046865477, guid: 99f5a50113b159c44afd47ec30dcf95b, type: 2}
+  - {fileID: 1161143539884942, guid: 5618247d50af6e64f8f4f39859682a28, type: 2}

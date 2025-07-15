@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96797508d3a860f7fa42035dd14d98a3, type: 3}
+  m_Name: 17_Wing_Skeleton
+  m_EditorClassIdentifier:
+  ID: 17_Wing_Skeleton
+  WingName: Skeleton Wings
+  Description: Climb Speed
+  Energy: 5.8K
+  Cost: 590B
+  UnlockType: 1
+  Thumbnail: {fileID: 21300000, guid: 9de1931e21bb82245a7b9b1b7e11ebfe, type: 2}
+  AssetReference:
+    m_AssetGUID: fcb7cfa6a9c7e9f45b285974af002497
+    m_SubObjectName:
+    m_SubObjectType:

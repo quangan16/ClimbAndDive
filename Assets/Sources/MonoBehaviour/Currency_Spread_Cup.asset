@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87fcb37178d249fa8dddbf685898eb7d, type: 3}
+  m_Name: Currency_Spread_Cup
+  m_EditorClassIdentifier:
+  _type: 2
+  _prefab: {fileID: 1440377953834143, guid: 09ccdebe13b8e5b4e84b577694b5cf11, type: 2}
+  _vfxEnd: {fileID: 1656409155941465, guid: 0827f781260bea7408df6b470452282d, type: 2}
+  _sfxEnd: {fileID: 11400000, guid: a98580c9cdc3b8847bf20614d040b4fc, type: 2}
+  _controlStart: {x: 0, y: 4, z: 0}
+  _controlEnd: {x: 3, y: -3, z: 0}
+  _fadeInDuration: 0.3
+  _fadeOutDuration: 0.2
+  _sequenceDelay: 0
+  _sequenceDuration: 0.5
+  _backDuration: 0.09
+  _backDistance: 0.5
+  _scaleDuration: 0.5
+  _scaleEase: 30
+  _flyDuration: 0.3
+  _flyDelay: 0.5
+  _flyCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

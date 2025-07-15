@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6863d052031f480b72b75095864c6e60, type: 3}
+  m_Name: FastNPCConfig
+  m_EditorClassIdentifier:
+  moveSpeed: 5
+  wanderRadius: 15
+  movementBoundary: 20
+  idleTimeMin: 2.5
+  idleTimeMax: 5
+  rotationSpeed: 180
+  climbSpeed: 150
+  climbProbability: 0.8
+  minClimbHeight: 1000
+  maxClimbHeight: 3100
+  climbTriggerDistance: 5
+  interactionDistance: 3
+  talkCooldown: 5
+  talkDuration: 2
+  wanderProbability: 0.7
+  jumpOffProbability: 0.15
+  celebrateProbability: 0.9
+  alwaysClimb: 0
+  useSpeedBasedAnimation: 1
+  minAnimationSpeed: 0.5
+  maxAnimationSpeed: 2

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3dfcbec3c9f667103023ae506f9b98, type: 3}
+  m_Name: Map3_Type1_1_Common_PlushBark
+  m_EditorClassIdentifier:
+  ID: Map3_Type1_1_Common_PlushBark
+  Map: 3
+  EggType: 0
+  RarityType: 0
+  Name: PlushBark
+  CoinFactor: 390M
+  Thumbnail: {fileID: 21300000, guid: b3541d31d79412649a215e5957947aea, type: 2}
+  AssetReference:
+    m_AssetGUID: 80241267ec888664897f6a51c6966c6d
+    m_SubObjectName:
+    m_SubObjectType:

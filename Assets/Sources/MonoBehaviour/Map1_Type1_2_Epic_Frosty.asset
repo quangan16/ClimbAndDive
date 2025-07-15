@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3dfcbec3c9f667103023ae506f9b98, type: 3}
+  m_Name: Map1_Type1_2_Epic_Frosty
+  m_EditorClassIdentifier:
+  ID: Map1_Type1_2_Epic_Frosty
+  Map: 1
+  EggType: 0
+  RarityType: 1
+  Name: Frosty
+  CoinFactor: 2
+  Thumbnail: {fileID: 21300000, guid: f707a2daad30dce4f846c569a697e485, type: 2}
+  AssetReference:
+    m_AssetGUID: 8ceae7e0c4d28e647a7f27345666b0ce
+    m_SubObjectName:
+    m_SubObjectType:

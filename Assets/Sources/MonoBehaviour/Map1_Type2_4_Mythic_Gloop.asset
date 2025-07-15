@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3dfcbec3c9f667103023ae506f9b98, type: 3}
+  m_Name: Map1_Type2_4_Mythic_Gloop
+  m_EditorClassIdentifier:
+  ID: Map1_Type2_4_Mythic_Gloop
+  Map: 1
+  EggType: 1
+  RarityType: 3
+  Name: Gloop
+  CoinFactor: 170
+  Thumbnail: {fileID: 21300000, guid: f7e4c24650381eb4bb621bd4118a629a, type: 2}
+  AssetReference:
+    m_AssetGUID: 13da8147af922164cb454bb9df970877
+    m_SubObjectName:
+    m_SubObjectType:

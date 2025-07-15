@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597ce6caa0e6ff953c5f97bf60bda02c, type: 3}
+  m_Name: 11_CharacterSkin_Character_10_Girl02 Variant
+  m_EditorClassIdentifier:
+  ID: 10_CharacterSkin_Character_10_Girl02 Variant
+  SkinName: Unicorn Girl
+  Description: Climb Speed
+  Energy: 371
+  Cost: 96B
+  UnlockType: 1
+  Thumbnail: {fileID: 21300000, guid: e0f5b7a2836a75b44aca141141d78d17, type: 2}
+  Avatar: {fileID: 21300000, guid: b386d2fb9e496bb43929b25e407b5fac, type: 2}
+  AssetReference:
+    m_AssetGUID: 0baced7ba6bb754428664ba944b84d08
+    m_SubObjectName:
+    m_SubObjectType:

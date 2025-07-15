@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5737029519119c80c3e0d310441d4953, type: 3}
+  m_Name: Game.Factory_CTJ_CharacterSkin
+  m_EditorClassIdentifier:
+  _configs:
+  - {fileID: 11400000, guid: 1b773d5e9c6394947a3b0425328a794e, type: 2}
+  - {fileID: 11400000, guid: ddee737572ac0f344adffffd06850631, type: 2}
+  - {fileID: 11400000, guid: 1969496f19d1ec343b8ce52da3ae1fd9, type: 2}
+  - {fileID: 11400000, guid: 01bd016afa9d45047a9783cb1eab3da7, type: 2}
+  - {fileID: 11400000, guid: 465904f4c766757408b9df4dd41dad2c, type: 2}
+  - {fileID: 11400000, guid: 6642988bb12f5c342a2e15c8b0687869, type: 2}
+  - {fileID: 11400000, guid: 6fb4624da4bda224bba147b804884ba0, type: 2}
+  - {fileID: 11400000, guid: 7c98f296e5d5f4d46b43a6c7826b2da1, type: 2}
+  - {fileID: 11400000, guid: 65660551b34d6d347a467c0ba911f32e, type: 2}
+  - {fileID: 11400000, guid: cd2a530c3734246498d2ba0a14d45457, type: 2}
+  - {fileID: 11400000, guid: c03e7ea29eefa86468f6e6f9daed4dd3, type: 2}
+  - {fileID: 11400000, guid: e9c21fdf347eeea41a9581c9238351a6, type: 2}
+  - {fileID: 11400000, guid: 514cd25ac1f602a4884f52c6f22e9a5c, type: 2}
+  - {fileID: 11400000, guid: 50a9650a822a49347819941fd521ebf6, type: 2}
+  _viewNextCount: 10
+  _shopPopup: {fileID: 1757211982315780, guid: 921ce0deb94ebf94eaba16cf47b1ccdd, type: 2}
+  _confirmPopup: {fileID: 1860867572181025, guid: 173307cae4dee65429d6f7b9f5e182d6, type: 2}

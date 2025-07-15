@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3dfcbec3c9f667103023ae506f9b98, type: 3}
+  m_Name: Map4_Special_5_Divine_Glitch Bat
+  m_EditorClassIdentifier:
+  ID: Map4_Special_5_Divine_Glitch Bat
+  Map: 4
+  EggType: 3
+  RarityType: 4
+  Name: Glitch Bat
+  CoinFactor: 210T
+  Thumbnail: {fileID: 21300000, guid: 8125820385cf7e14581c8ae33627eb8f, type: 2}
+  AssetReference:
+    m_AssetGUID: aaa51fdc383b4ea4e951e328f4625f5e
+    m_SubObjectName:
+    m_SubObjectType:

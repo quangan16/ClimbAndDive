@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d0d09f1cf7a9285951b440a3e3bd69, type: 3}
+  m_Name: Game.Factory_CTJ_LuckyWheel
+  m_EditorClassIdentifier:
+  _configs:
+  - Map: 1
+    Configs:
+    - {fileID: 11400000, guid: 79508417f3201ba4fa7526f860c42dfd, type: 2}
+    - {fileID: 11400000, guid: a0af0d24fa876334bac47609f5dd18f2, type: 2}
+    - {fileID: 11400000, guid: 43ac53ce00927614fb8252fd069c117b, type: 2}
+    - {fileID: 11400000, guid: 67f0b29c831bf6a4c8cee37a95cf26c4, type: 2}
+    - {fileID: 11400000, guid: 7519bf2fe03d7fd4aa0e676bf00c4938, type: 2}
+    - {fileID: 11400000, guid: da92207b98b1a62498062d61db3171f3, type: 2}
+  - Map: 2
+    Configs:
+    - {fileID: 11400000, guid: ac777165e9aa0d64ba56cb787c135bca, type: 2}
+    - {fileID: 11400000, guid: 223069217bf20494d8167d62de4a1071, type: 2}
+    - {fileID: 11400000, guid: 93fefcdb058e05144b242d672b4d2175, type: 2}
+    - {fileID: 11400000, guid: 03298d168af1bb74182573bde01deab4, type: 2}
+    - {fileID: 11400000, guid: 092fd580689d7c54eabf6b2714eb5486, type: 2}
+    - {fileID: 11400000, guid: b57355460fc103546a9636f71afd7d7a, type: 2}
+  _gemCost: 40
+  _spinCount: 10

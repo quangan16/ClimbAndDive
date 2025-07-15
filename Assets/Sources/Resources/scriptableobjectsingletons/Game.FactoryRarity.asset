@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a66217e4221d2776b802916563b213, type: 3}
+  m_Name: Game.FactoryRarity
+  m_EditorClassIdentifier:
+  _configs:
+  - Type: 0
+    Frame: {fileID: 21300000, guid: eb141d073c8a86645aebcfa05eccd353, type: 2}
+    Color: {r: 0.28627452, g: 0.86274517, b: 0.9960785, a: 1}
+    MaterialOutline: {fileID: 2100000, guid: 23c4a3bade6835e4aae87bf0ebd3f758, type: 2}
+    Glow: {fileID: 21300000, guid: 5e13b080a0a8af84dafebbd13b9814d5, type: 2}
+    VfxGlow: {fileID: 1830958891918405, guid: 7f624be48d42ed047b6c003b93790c57, type: 2}
+  - Type: 1
+    Frame: {fileID: 21300000, guid: 1f91e213f8872e54598e8e62d107a4e0, type: 2}
+    Color: {r: 1, g: 0.31764707, b: 0.97647065, a: 1}
+    MaterialOutline: {fileID: 2100000, guid: 0036656f823c717409fc45764187b1d2, type: 2}
+    Glow: {fileID: 21300000, guid: 13f6d7b3887c49840b3e1e5b86ea12ed, type: 2}
+    VfxGlow: {fileID: 1289711383201608, guid: ae41f5ab23344ac4a9f7935b19a7a9fc, type: 2}
+  - Type: 2
+    Frame: {fileID: 21300000, guid: 4d6d353fe16f17249b27bd032aee1166, type: 2}
+    Color: {r: 1, g: 0.9176471, b: 0.21960786, a: 1}
+    MaterialOutline: {fileID: 2100000, guid: 6e1391783ed79e94abc1d13048b84602, type: 2}
+    Glow: {fileID: 21300000, guid: 17dd75f99cccba24c90d8b0f5283644b, type: 2}
+    VfxGlow: {fileID: 1878247570130417, guid: 07aabc437a34b4849853f98e92fbcdfe, type: 2}
+  - Type: 3
+    Frame: {fileID: 21300000, guid: e45f31fcd13ac8a4a8b4fceeb8cdf203, type: 2}
+    Color: {r: 0.95294124, g: 0.34509805, b: 0.21176472, a: 1}
+    MaterialOutline: {fileID: 2100000, guid: 8da1f77d102407741b3611e1c865f213, type: 2}
+    Glow: {fileID: 21300000, guid: 7ae14cc1f73144d40875d1098693307e, type: 2}
+    VfxGlow: {fileID: 1378716105480464, guid: 362c9ef05fb2414428fd1d295764580a, type: 2}
+  - Type: 4
+    Frame: {fileID: 21300000, guid: e2cb146f046d5a944a96939ea00b3835, type: 2}
+    Color: {r: 1, g: 1, b: 1, a: 1}
+    MaterialOutline: {fileID: 2100000, guid: d464dd72b16ad974c95463b718b9a99b, type: 2}
+    Glow: {fileID: 21300000, guid: a670db189e259de4e94499da20345068, type: 2}
+    VfxGlow: {fileID: 1590052441926490, guid: 934dadc802d8826429c62c589287d873, type: 2}
+  - Type: 5
+    Frame: {fileID: 21300000, guid: 447289014266e254889cd35e3fedee1b, type: 2}
+    Color: {r: 0.6784314, g: 0, b: 0.9960785, a: 1}
+    MaterialOutline: {fileID: 2100000, guid: 43f99828570380345a666efcdae129f6, type: 2}
+    Glow: {fileID: 21300000, guid: f0435d61fa9b44e4ca3ee88d70c8381d, type: 2}
+    VfxGlow: {fileID: 1857802333409414, guid: 6f9c60e8ba0a632439331a4b44e1a655, type: 2}
+  _default:
+    Type: 404
+    Frame: {fileID: 21300000, guid: e0c95c9594806d54292b295cd1c6cc2b, type: 2}
+    Color: {r: 0.2901961, g: 0.8745099, b: 1, a: 1}
+    MaterialOutline: {fileID: 0}
+    Glow: {fileID: 21300000, guid: 5e13b080a0a8af84dafebbd13b9814d5, type: 2}
+    VfxGlow: {fileID: 1830958891918405, guid: 7f624be48d42ed047b6c003b93790c57, type: 2}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96797508d3a860f7fa42035dd14d98a3, type: 3}
+  m_Name: 25_Wing_DarkAngel
+  m_EditorClassIdentifier:
+  ID: 25_Wing_DarkAngel
+  WingName: Dark Angel
+  Description: Climb Speed
+  Energy: 93K
+  Cost: 93a
+  UnlockType: 1
+  Thumbnail: {fileID: 21300000, guid: 53224621c23b8e6409b7294ffeafbc93, type: 2}
+  AssetReference:
+    m_AssetGUID: 8c8e7a14cdb79de4eaaff319b8bedfa5
+    m_SubObjectName:
+    m_SubObjectType:
