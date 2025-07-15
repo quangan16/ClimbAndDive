@@ -146,35 +146,6 @@ public class CameraController : MonoBehaviour
 
 
     }
-    void Update()
-    {
-        // Orbiting: Use swipe direction from InputManager (specific screen area)
-        // Vector2 swipe = InputManager.Instance.CameraDirection;
-        // freeLookCamera.m_XAxis.Value += swipe.x * orbitSensitivity; // Horizontal rotation
-        // targetYAxisValue += swipe.y * orbitSensitivityY;
-        // targetYAxisValue = Mathf.Clamp01(targetYAxisValue); // Keep within [0,1] for FreeLook Y-axis
-        // freeLookCamera.m_YAxis.Value = Mathf.Lerp(freeLookCamera.m_YAxis.Value, targetYAxisValue, Time.deltaTime * yAxisSmoothing);
-        // // Zoom: Use legacy input for pinch-to-zoom
-        // float zoomInput = 0f;
-        // if (Input.touchCount == 2) // Detect pinch gesture
-        // {
-        //     Touch touch0 = Input.GetTouch(0);
-        //     Touch touch1 = Input.GetTouch(1);
-        //
-        //     // Calculate pinch distance in previous and current frames
-        //     Vector2 touch0PrevPos = touch0.position - touch0.deltaPosition;
-        //     Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;
-        //     float prevTouchDeltaMag = (touch0PrevPos - touch1PrevPos).magnitude;
-        //     float touchDeltaMag = (touch0.position - touch1.position).magnitude;
-        //
-        //     // Zoom input is the difference in pinch distance
-        //     zoomInput = prevTouchDeltaMag - touchDeltaMag;
-        // }
-        //
-        // // Apply zoom (clamped to prevent extreme values)
-        // zoomAmount = Mathf.Clamp(zoomAmount + zoomInput * zoomSpeed, 4f, 12f); // Min/max zoom
-        // freeLookCamera.m_Lens.FieldOfView = Mathf.Lerp(freeLookCamera.m_Lens.FieldOfView, zoomAmount, Time.deltaTime * 5f);
-    }
 
     public void UpdatePosAndRotatetion(Vector2 input )
     {
