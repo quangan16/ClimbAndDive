@@ -16,7 +16,7 @@ public class MoveState : IPlayerState
     public void Update(PlayerFiniteStateMachine fsm = null)
     {
         fsm.PlayerController.Move(InputManager.Instance.MoveDirection);
-        if (fsm.PlayerController.IsGrounded && !InputManager.Instance.MoveTriggered)
+        if (fsm.PlayerController.IsGrounded && fsm.PlayerController.MoveVelocity.magnitude <=0)
         {
             fsm.SwitchState(fsm.IdleState);
         }

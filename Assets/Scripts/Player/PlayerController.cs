@@ -51,8 +51,12 @@ public class PlayerController : MonoBehaviour
         ApplyGravity();
     }
 
+    public Vector3 moveVelocity;
+    public Vector3 MoveVelocity => moveVelocity;
+    public Vector3 slowDownVelocity;
     public void Move(Vector2 inputDir)
     {
+
         Vector2 input = inputDir;
         float inputMagnitude = inputDir.magnitude;
         // OnPlayerMove?.Invoke(inputMagnitude);
@@ -63,14 +67,28 @@ public class PlayerController : MonoBehaviour
 
             RotateWithMoveDirection(targetAngle);
             Vector3 moveDir = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
-            var moveVelocity = moveDir.normalized * inputMagnitude * maxMoveSpeed;
-            OnPlayerMove?.Invoke(Mathf.Clamp01(moveVelocity.magnitude));
-            controller.Move(moveVelocity  * Time.deltaTime);
+            moveVelocity = moveDir.normalized * inputMagnitude * maxMoveSpeed;
+             // moveVelocity = Vector3.ClampMagnitude(moveVelocity, maxMoveSpeed);
+
+
         }
         else
         {
+            if (moveVelocity.sqrMagnitude > 0.01f)
+            {
+                moveVelocity = Vector3.SmoothDamp(moveVelocity, Vector3.zero,ref  slowDownVelocity, 0.2f);
+            }
+            else
+            {
+                moveVelocity = Vector3.zero;
+            }
 
+            // moveVelocity = Vec tor3.Slerp(moveVelocity, Vector3.zero, Time.deltaTime);
         }
+
+        print(moveVelocity.magnitude);
+        OnPlayerMove?.Invoke(Mathf.Clamp01(moveVelocity.magnitude/maxMoveSpeed));
+        controller.Move(moveVelocity  * Time.deltaTime);
 
 
     }

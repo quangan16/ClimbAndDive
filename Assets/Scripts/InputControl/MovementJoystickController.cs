@@ -37,7 +37,7 @@ public class MovementJoystickController : MonoBehaviour
 
     public void ResetInputDirection()
     {
-        InputManager.Instance.HandleJoystickMovementInput(Vector2.zero);
+        InputManager.Instance.HandleJoystickMovementInput(Vector3.Lerp(res, Vector3.zero,1));
     }
 
     public void SetHandlePosition(Vector3 position)
