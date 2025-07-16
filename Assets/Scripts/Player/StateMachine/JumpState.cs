@@ -6,12 +6,15 @@ public class JumpState : IPlayerState
     private bool isJumping;
     public void Enter(PlayerFiniteStateMachine fsm = null)
     {
+        Debug.Log("Entering Jump State");
+        fsm.PlayerController.animationController.SetJump(true);
 
         fsm.CurrentStateType = PlayerState.Jump;
     }
 
     public void Exit(PlayerFiniteStateMachine fsm = null)
     {
+        fsm.PlayerController.animationController.SetJump(false);
         // throw new System.NotImplementedException();
     }
 
@@ -21,14 +24,29 @@ public class JumpState : IPlayerState
         if (InputManager.Instance.JumpTriggered)
         {
             isJumping = true;
-            Debug.Log("Jump triggered1");
             InputManager.Instance.JumpTriggered = false;
-            fsm.PlayerController.Jump();
+            if (fsm.PreviousState == fsm.IdleState || fsm.PreviousState == fsm.MoveState)
+            {
+                fsm.PlayerController.Jump();
+            }
+            else if (fsm.PreviousState == fsm.ClimbState)
+            {
+                fsm.PlayerController.JumpFromLadder();
+            }
+
         }
-        fsm.PlayerController.Move(InputManager.Instance.MoveDirection);
-        if (fsm.PlayerController.IsGrounded && !isJumping)
+
+        if (fsm.PreviousState == fsm.IdleState || fsm.PreviousState == fsm.MoveState)
         {
-            Debug.Log("Jump triggered2");
+            fsm.PlayerController.Move(InputManager.Instance.MoveDirection);
+        }
+
+
+        fsm.PlayerController.animationController.SetDiveSpeed(fsm.PlayerController.Velocity.y);
+        fsm.PlayerController.animationController.SetJump(isJumping);
+        if (fsm.PlayerController.IsGrounded && fsm.PlayerController.Velocity.y <= 0)
+        {
+            Debug.Log(isJumping);
             if(InputManager.Instance.MoveTriggered)
             {
                fsm.SwitchState(fsm.MoveState);
@@ -37,17 +55,18 @@ public class JumpState : IPlayerState
             {
                 fsm.SwitchState(fsm.IdleState);
             }
+            isJumping = false;
         }
 
-        if (fsm.PlayerController.CanClimb)
-        {
-            fsm.SwitchState(fsm.ClimbState);
-        }
+        // if (fsm.PlayerController.CanClimb)
+        // {
+        //     fsm.SwitchState(fsm.ClimbState);
+        // }
 
-        if (!fsm.PlayerController.IsGrounded && isJumping && fsm.PlayerController.CheckDiving())
+        if (isJumping && fsm.PlayerController.CheckDiving())
         {
             fsm.SwitchState(fsm.DiveState);
         }
-        isJumping = false;
+
     }
 }

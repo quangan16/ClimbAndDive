@@ -6,27 +6,48 @@ using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public PlayerFiniteStateMachine fsm;
+    public PlayerAnimationController animationController;
     public float maxMoveSpeed = 4f;
     public float rotationSmoothTime = 0.09f;
 
     private CharacterController controller;
     private Vector3 velocity;
+    public Vector3 Velocity => velocity;
     private float gravity = -9.81f;
     private float smoothVelocity;
+    private float heightRequireToDive = 7.0f;
+    public float HeightRequireToDive => heightRequireToDive;
+
+    [SerializeField] private Transform refPoint;
+
+    public float CurrentHeightToGround => (transform.position - refPoint.transform.position).magnitude;
 
     public static event Action<float> OnPlayerMove;
 
-    public float minimumDiveVelocity = 10;
+
+    public static event Action OnPlayerClimb;
+
+    public float minimumDiveVelocity = -8;
 
 
-    public bool IsGrounded =>  controller.isGrounded;
+    public LayerMask groundLayer;
+    public float skinWidth = 1f;
+    public bool IsGrounded =>   Physics.Raycast(transform.position, Vector3.down, 0.1f + skinWidth, groundLayer);
 
 
     public float jumpStrength = 1.5f;
-    public float climbSpeed = 100f;
+    public float ladderJumpStrength = 1f;
+    public float climbSpeed = 2f;
 
     [SerializeField] private bool canClimb = false;
+    [SerializeField] private bool isClimbing = false;
+
+    public bool IsClimbing
+    {
+        get => isClimbing;
+        set => isClimbing = value;
+    }
 
     public Vector3 lastLadderSnapPoint = Vector3.zero;
     public Vector3 lastLadderContactNormal = Vector3.zero;
@@ -48,7 +69,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // print(IsGrounded);
+        print(CurrentHeightToGround);
         ApplyGravity();
+
+
     }
 
     public Vector3 moveVelocity;
@@ -59,39 +84,46 @@ public class PlayerController : MonoBehaviour
 
         Vector2 input = inputDir;
         float inputMagnitude = inputDir.magnitude;
-        // OnPlayerMove?.Invoke(inputMagnitude);
         if (inputMagnitude >= 0.1f)
         {
             // Camera-relative direction
             float targetAngle = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
-
             RotateWithMoveDirection(targetAngle);
             Vector3 moveDir = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+            print(moveDir);
             moveVelocity = moveDir.normalized * inputMagnitude * maxMoveSpeed;
-             // moveVelocity = Vector3.ClampMagnitude(moveVelocity, maxMoveSpeed);
-
-
+             // moveVelocity = Vector3.ClampMagnitude(moveVelocity, maxMoveSpeed)
         }
         else
         {
             if (moveVelocity.sqrMagnitude > 0.01f)
             {
-                moveVelocity = Vector3.SmoothDamp(moveVelocity, Vector3.zero,ref  slowDownVelocity, 0.2f);
+                moveVelocity = Vector3.SmoothDamp(moveVelocity, new Vector3(0, moveVelocity.y, 0),ref  slowDownVelocity, 0.2f);
             }
             else
             {
-                moveVelocity = Vector3.zero;
+                moveVelocity = new Vector3(0, moveVelocity.y, 0);
             }
-
-            // moveVelocity = Vec tor3.Slerp(moveVelocity, Vector3.zero, Time.deltaTime);
         }
 
-        print(moveVelocity.magnitude);
-        OnPlayerMove?.Invoke(Mathf.Clamp01(moveVelocity.magnitude/maxMoveSpeed));
+        if (fsm.CurrentStateType == PlayerState.Move)
+        {
+            OnPlayerMove?.Invoke(Mathf.Clamp01(moveVelocity.magnitude/maxMoveSpeed));
+        }
         controller.Move(moveVelocity  * Time.deltaTime);
+        // if (fsm.CurrentStateType == PlayerState.Move)
+        // {
+        //     OnPlayerMove?.Invoke(Mathf.Clamp01(moveVelocity.magnitude/maxMoveSpeed));
+        // }
+
+        // controller.Move(moveVelocity  * Time.deltaTime);
 
 
     }
+
+
+
+
 
     public void RotateWithMoveDirection(float relativeAngle)
     {
@@ -101,7 +133,8 @@ public class PlayerController : MonoBehaviour
 
     public void ApplyGravity()
     {
-        if (controller.isGrounded && velocity.y < 0)
+        if (IsClimbing) return;
+        if (IsGrounded && velocity.y < 0)
             velocity.y = -2f;
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -109,7 +142,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if (!controller.isGrounded)
+        if (!IsGrounded)
         {
             return;
         }
@@ -119,63 +152,86 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void JumpFromLadder()
+    {
+
+        velocity.y = Mathf.Sqrt(ladderJumpStrength * -2f * gravity);
+        controller.Move(Quaternion.Euler(0, 180, 0) * transform.forward +  velocity *  Time.deltaTime);
+        StartCoroutine(RotateOverTime(new Vector3(0, 180, 0), 0.12f));
+    }
+
+    IEnumerator RotateOverTime(Vector3 targetAngle, float duration)
+    {
+        Quaternion startRot = transform.rotation;
+        Quaternion endRot = startRot * Quaternion.Euler(targetAngle);
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+            transform.localRotation = Quaternion.Slerp(startRot, endRot, t);
+            yield return null;
+        }
+    }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Ladder")
+        {
+            if (canClimb == false)
+            {
+                canClimb = true;
+            }
+
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Ladder")
         {
-            canClimb = true;
             lastLadderSnapPoint = other.ClosestPointOnBounds(this.transform.position);
-            lastLadderContactNormal = CalculateBoxColliderNormal(other, lastLadderSnapPoint);
+             lastLadderContactNormal =  CalculateBoxColliderNormal(other, lastLadderSnapPoint);
         }
     }
 
     private Vector3 CalculateBoxColliderNormal(Collider collider, Vector3 contactPoint)
     {
-        // Transform contact point to local space
-        Vector3 localPoint = collider.transform.InverseTransformPoint(contactPoint);
         BoxCollider box = collider as BoxCollider;
         if (box == null) return Vector3.zero;
 
-        // Get box dimensions
-        Vector3 halfSize = box.size * 0.5f;
+        // Convert the contact point into the local space of the collider
+        Vector3 localPoint = collider.transform.InverseTransformPoint(contactPoint);
+
+        // Get box center and half size
         Vector3 localCenter = box.center;
+        Vector3 halfSize = box.size * 0.5f;
 
-        // Calculate relative position from box center
-        Vector3 relativePoint = localPoint - localCenter;
+        // Compute point relative to box center
+        Vector3 relative = localPoint - localCenter;
 
-        // Determine which face is closest
-        Vector3 normal = Vector3.zero;
-        float minDistance = float.MaxValue;
+        // Find the closest face
+        float dx = halfSize.x - Mathf.Abs(relative.x);
+        float dy = halfSize.y - Mathf.Abs(relative.y);
+        float dz = halfSize.z - Mathf.Abs(relative.z);
 
-        // Check each face (+x, -x, +y, -y, +z, -z)
-        Vector3[] faceNormals = {
-            Vector3.right, Vector3.left,
-            Vector3.up, Vector3.down,
-            Vector3.forward, Vector3.back
-        };
-        float[] faceDistances = {
-            halfSize.x - Mathf.Abs(relativePoint.x), // +x, -x
-            halfSize.x - Mathf.Abs(relativePoint.x),
-            halfSize.y - Mathf.Abs(relativePoint.y), // +y, -y
-            halfSize.y - Mathf.Abs(relativePoint.y),
-            halfSize.z - Mathf.Abs(relativePoint.z), // +z, -z
-            halfSize.z - Mathf.Abs(relativePoint.z)
-        };
+        Vector3 localNormal;
 
-        for (int i = 0; i < faceNormals.Length; i++)
+        if (dx < dy && dx < dz)
         {
-            if (faceDistances[i] < minDistance)
-            {
-                minDistance = faceDistances[i];
-                normal = faceNormals[i];
-                lastLadderContactNormal = faceNormals[i];
-                // Adjust for negative faces
-                if (i % 2 == 1) normal = -normal;
-            }
+            localNormal = new Vector3(Mathf.Sign(relative.x), 0, 0);
+        }
+        else if (dy < dz)
+        {
+            localNormal = new Vector3(0, Mathf.Sign(relative.y), 0);
+        }
+        else
+        {
+            localNormal = new Vector3(0, 0, Mathf.Sign(relative.z));
         }
 
-        // Transform normal to world space
-        return collider.transform.TransformDirection(normal).normalized;
+        // Transform normal back to world space
+        return collider.transform.TransformDirection(localNormal);
     }
 
     public void OnTriggerExit(Collider other)
@@ -191,6 +247,7 @@ public class PlayerController : MonoBehaviour
         if (!canClimb) return;
         var climbDirection = InputManager.Instance.MoveDirection.y;
         velocity.y = climbDirection * climbSpeed;
+        animationController.SetClimbSpeed(velocity.y);
         SnapToLadder();
         controller.Move(velocity * Time.deltaTime);
 
@@ -198,14 +255,14 @@ public class PlayerController : MonoBehaviour
         void SnapToLadder()
         {
             transform.position = lastLadderSnapPoint;
-            transform.forward =  -lastLadderContactNormal;
+            transform.forward = -lastLadderContactNormal;
         }
     }
 
 
     public bool CheckDiving()
     {
-        return !controller.isGrounded && controller.velocity.magnitude > minimumDiveVelocity;
+        return controller.velocity.y < minimumDiveVelocity && CurrentHeightToGround >= heightRequireToDive;
     }
 
 

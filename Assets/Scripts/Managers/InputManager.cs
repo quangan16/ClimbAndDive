@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
 
 
 
-    private bool jumpTriggered = false;
+    public bool jumpTriggered = false;
 
     public bool MoveTriggered => moveDirection.magnitude > 0;
     public bool JumpTriggered

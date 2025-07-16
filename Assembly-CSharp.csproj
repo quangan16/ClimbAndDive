@@ -57,15 +57,25 @@
     <Compile Include="Assets\Scripts\Player\StateMachine\DiveState.cs" />
     <Compile Include="Assets\Scripts\Player\StateMachine\ClimbState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Player\StateMachine\LandingState.cs" />
+    <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\DataManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\EffectManager.cs" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Sources\Resources\shaders\tilesprogressive.shader" />
     <None Include="Assets\Sources\Resources\shaders\circularwipe.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Sources\Resources\shaders\slide.shader" />
     <None Include="Assets\Sources\Resources\shaders\doubleslide.shader" />
     <None Include="Assets\Sources\Resources\shaders\windwakerwater.shader" />
     <None Include="Assets\Sources\Shader\Graphy_Graph Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Sources\Resources\shaders\seawaves.shader" />
     <None Include="Assets\Sources\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\Sources\Shader\Custom_UI_Grayscale_0.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Sources\Shader\TextMeshPro_Sprite.shader" />
     <None Include="Assets\Sources\Resources\shaders\burn.shader" />
     <None Include="Assets\Sources\Resources\shaders\pixelate.shader" />
@@ -74,19 +84,29 @@
     <None Include="Assets\Sources\Resources\shaders\spiral.shader" />
     <None Include="Assets\Sources\Resources\shaders\smear.shader" />
     <None Include="Assets\Sources\Resources\shaders\wipe.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Sources\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Sources\Resources\shaders\circles.shader" />
     <None Include="Assets\Sources\Resources\shaders\burnsquare.shader" />
     <None Include="Assets\Sources\Shader\Hidden_Shader Graph_FallbackError.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Sources\Resources\shaders\doublewipe.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Sources\Resources\shaders\screen.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Sources\Resources\shaders\ripple.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Sources\Resources\shaders\crosswipe.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Sources\Shader\Graphy_Graph Standard.shader" />
     <None Include="Assets\Sources\Resources\aline_text.shader" />
     <None Include="Assets\Sources\Resources\shaders\cube.shader" />
     <None Include="Assets\Sources\Shader\TextMeshPro_Mobile_Distance Field_0.shader" />
     <None Include="Assets\Sources\Shader\TextMeshPro_Mobile_Distance Field.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Sources\Shader\Toony Colors Pro 2_Hybrid Shader 2_0.shader" />
     <None Include="Assets\Sources\Resources\aline_surface.shader" />
     <None Include="Assets\Sources\Shader\Custom_UI_Grayscale.shader" />
@@ -94,15 +114,22 @@
     <None Include="Assets\Sources\Shader\TextMeshPro_Distance Field.shader" />
     <None Include="Assets\Sources\Shader\Toony Colors Pro 2_Hybrid Shader 2.shader" />
     <None Include="Assets\Sources\Resources\shaders\tiles.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Sources\Resources\shaders\mosaic.shader" />
     <None Include="Assets\Sources\Shader\Cartoon FX_Remaster_Particle Ubershader.shader" />
     <None Include="Assets\Sources\Resources\shaders\fade.shader" />
     <None Include="Assets\Sources\Shader\Shader Graphs_TextureScroll.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Sources\Shader\Toony Colors Pro 2_Hybrid Shader 2 (Outline).shader" />
     <None Include="Assets\Sources\Resources\shaders\warp.shader" />
     <None Include="Assets\Sources\Resources\shaders\splash.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Sources\Resources\shaders\dissolve.shader" />
     <None Include="Assets\Sources\Resources\shaders\shape.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\Sources\Shader\TextMeshPro_Distance Field_0.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.42f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -351,10 +378,16 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.42f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.42f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.42f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.42f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
@@ -729,79 +762,79 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.42f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-      <HintPath>C:\Users\nqan1\OneDrive\Documents\UnityProjects\ClimbAndDive\ClimbAndDive\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+      <HintPath>D:\UnityProjects\ClimbAndDive\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

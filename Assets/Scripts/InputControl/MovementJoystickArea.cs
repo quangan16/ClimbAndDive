@@ -14,17 +14,13 @@ public class MovementJoystickArea : MonoBehaviour,  IPointerDownHandler, IPointe
 
     public MovementJoystickController movementJoystick;
 
-    public bool isTouching;
+    [SerializeField] private bool isTouching;
 
 
-    public void Update()
-    {
 
-
-    }
     public void OnDrag(PointerEventData eventData)
     {
-        print("OnDrag");
+        // print("OnDrag");
         OnJoystickInteracted?.Invoke(eventData);
     }
 

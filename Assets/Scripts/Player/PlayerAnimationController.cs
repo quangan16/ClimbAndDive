@@ -8,17 +8,60 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void Start()
     {
-        PlayerController.OnPlayerMove += SetSpeed;
+        PlayerController.OnPlayerMove += SetMoveSpeed;
+
+
     }
 
-    public void SetSpeed(float speed)
+    public void SetMoveSpeed(float moveSpeed)
     {
-        print("sp " + speed);
-        playerAnimator.SetFloat("Speed", speed);
+
+        playerAnimator.SetFloat("Speed", moveSpeed);
     }
 
-    public void SetIdle()
+    public void SetIdle(bool isIdling)
     {
-        playerAnimator.SetTrigger("idle");
+        playerAnimator.SetBool("IsIdling", isIdling);
     }
+
+    public void SetJump(bool isJump)
+    {
+        playerAnimator.SetBool("IsJumping", isJump);
+    }
+
+    public void SetClimb(bool isClimb)
+    {
+        print("111");
+        playerAnimator.SetBool("IsClimbing", isClimb);
+    }
+
+    public void SetClimbSpeed(float climbSpeed)
+    {
+        playerAnimator.SetFloat("ClimbSpeed", climbSpeed);
+    }
+
+    public void SetDiveSpeed(float diveSpeed)
+    {
+        playerAnimator.SetFloat("DiveSpeed", diveSpeed);
+    }
+
+    public void SetDive(bool isDive)
+    {
+        playerAnimator.SetBool("IsDiving", isDive);
+    }
+
+    public void SetLanding(bool isLanding)
+    {
+        playerAnimator.SetBool("IsLanding", isLanding);
+    }
+
+
+
+    public void ResetAll()
+    {
+        SetIdle(false);
+        SetJump(false);
+        SetClimb(false);
+    }
+
 }
