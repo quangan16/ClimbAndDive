@@ -20,7 +20,7 @@ public class MovementJoystickArea : MonoBehaviour,  IPointerDownHandler, IPointe
 
     public void OnDrag(PointerEventData eventData)
     {
-        // print("OnDrag");
+        // print("OnDrag1");
         OnJoystickInteracted?.Invoke(eventData);
     }
 

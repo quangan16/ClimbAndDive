@@ -8,14 +8,14 @@ public class DiveState : IPlayerState
     {
         fsm.CurrentStateType = PlayerState.Dive;
         fsm.PlayerController.animationController.SetDive(true);
-
+        fsm.PlayerController.GravityMultiplier = 3.0f;
     }
 
     public void Exit(PlayerFiniteStateMachine fsm = null)
     {
          fsm.PlayerController.animationController.SetDive(false);
-
-        // throw new System.NotImplementedException();
+         fsm.PlayerController.GravityMultiplier = 1.5f;
+         // throw new System.NotImplementedException();
     }
 
     public void Update(PlayerFiniteStateMachine fsm = null)

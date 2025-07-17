@@ -18,6 +18,7 @@ public class CameraSwipeArea : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
     public void OnDrag(PointerEventData eventData)
     {
+        print("OnDrag222");
         if (!isDragging) return;
 
         var swipeDirection =eventData.delta;

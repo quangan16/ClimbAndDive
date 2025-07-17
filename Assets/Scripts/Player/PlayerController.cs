@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity;
     public Vector3 Velocity => velocity;
     private float gravity = -9.81f;
+    public float GravityMultiplier = 1.5f;
     private float smoothVelocity;
     private float heightRequireToDive = 7.0f;
     public float HeightRequireToDive => heightRequireToDive;
@@ -70,7 +71,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // print(IsGrounded);
-        print(CurrentHeightToGround);
+        // print(CurrentHeightToGround);
         ApplyGravity();
 
 
@@ -90,7 +91,7 @@ public class PlayerController : MonoBehaviour
             float targetAngle = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
             RotateWithMoveDirection(targetAngle);
             Vector3 moveDir = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
-            print(moveDir);
+            // print(moveDir);
             moveVelocity = moveDir.normalized * inputMagnitude * maxMoveSpeed;
              // moveVelocity = Vector3.ClampMagnitude(moveVelocity, maxMoveSpeed)
         }
@@ -136,7 +137,7 @@ public class PlayerController : MonoBehaviour
         if (IsClimbing) return;
         if (IsGrounded && velocity.y < 0)
             velocity.y = -2f;
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * GravityMultiplier * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 

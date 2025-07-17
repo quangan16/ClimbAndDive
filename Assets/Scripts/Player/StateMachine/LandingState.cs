@@ -17,6 +17,7 @@ public class LandingState : IPlayerState
     public void Exit(PlayerFiniteStateMachine fsm = null)
     {
         fsm.PlayerController.animationController.SetLanding(false);
+        EffectManager.Instance.TriggerResourcesEffect(Vector3.zero);
     }
 
     public void Update(PlayerFiniteStateMachine fsm = null)

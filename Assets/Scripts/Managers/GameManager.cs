@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
         if (player.IsClimbing)
         {
             climbCoin = (int)player.CurrentHeightToGround * coinCollectRate;
-            print("climbCoin" + climbCoin);
         }
 
     }

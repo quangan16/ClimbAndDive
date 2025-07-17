@@ -38,7 +38,7 @@ public class InputManager : MonoBehaviour
     }
     public void Start()
     {
-        CameraSwipeArea.OnSwipe += HandleSwipeCameraAngleInput;
+        // CameraSwipeArea.OnSwipe += HandleSwipeCameraAngleInput;
         CameraSwipeArea.OnEndSwipe += ResetCameraDirection;
     }
 
