@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IClimber
 {
     public PlayerFiniteStateMachine fsm;
     public PlayerAnimationController animationController;
@@ -27,9 +27,11 @@ public class PlayerController : MonoBehaviour
     public static event Action<float> OnPlayerMove;
 
 
-    public static event Action OnPlayerClimb;
 
-    public float minimumDiveVelocity = -8;
+
+    public float MinimumDiveVelocity { get; set; } = -8;
+
+
 
 
     public LayerMask groundLayer;
@@ -39,10 +41,17 @@ public class PlayerController : MonoBehaviour
 
     public float jumpStrength = 1.5f;
     public float ladderJumpStrength = 1f;
-    public float climbSpeed = 2f;
+    public float ClimbSpeed { get; set; }= 2f;
+
 
     [SerializeField] private bool canClimb = false;
     [SerializeField] private bool isClimbing = false;
+    public float ClimbProgress()
+    {
+        if (fsm.CurrentStateType != PlayerState.Climb) return 0f;
+        float progress = Mathf.Clamp01(CurrentHeightToGround / GameManager.Instance.ladder.TotalHeight);
+        return progress;
+    }
 
     public bool IsClimbing
     {
@@ -50,9 +59,9 @@ public class PlayerController : MonoBehaviour
         set => isClimbing = value;
     }
 
-    public Vector3 lastLadderSnapPoint = Vector3.zero;
-    public Vector3 lastLadderContactNormal = Vector3.zero;
-    public Vector3 lastLadderFaceContact = Vector3.zero;
+    public Vector3 LastLadderSnapPoint { get; set; }= Vector3.zero;
+    public Vector3 LastLadderContactNormal { get; set; } = Vector3.zero;
+    public Vector3 LastLadderFaceContact { get; set; }= Vector3.zero;
 
     public bool CanClimb
     {
@@ -80,6 +89,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 moveVelocity;
     public Vector3 MoveVelocity => moveVelocity;
     public Vector3 slowDownVelocity;
+
+
     public void Move(Vector2 inputDir)
     {
 
@@ -191,8 +202,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Ladder")
         {
-            lastLadderSnapPoint = other.ClosestPointOnBounds(this.transform.position);
-             lastLadderContactNormal =  CalculateBoxColliderNormal(other, lastLadderSnapPoint);
+            LastLadderSnapPoint = other.ClosestPointOnBounds(this.transform.position);
+             LastLadderContactNormal =  CalculateBoxColliderNormal(other, LastLadderSnapPoint);
         }
     }
 
@@ -247,7 +258,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!canClimb) return;
         var climbDirection = InputManager.Instance.MoveDirection.y;
-        velocity.y = climbDirection * climbSpeed;
+        velocity.y = climbDirection * ClimbSpeed;
         animationController.SetClimbSpeed(velocity.y);
         SnapToLadder();
         controller.Move(velocity * Time.deltaTime);
@@ -255,15 +266,15 @@ public class PlayerController : MonoBehaviour
 
         void SnapToLadder()
         {
-            transform.position = lastLadderSnapPoint;
-            transform.forward = -lastLadderContactNormal;
+            transform.position = LastLadderSnapPoint;
+            transform.forward = -LastLadderContactNormal;
         }
     }
 
 
     public bool CheckDiving()
     {
-        return controller.velocity.y < minimumDiveVelocity && CurrentHeightToGround >= heightRequireToDive;
+        return controller.velocity.y < MinimumDiveVelocity && CurrentHeightToGround >= heightRequireToDive;
     }
 
 

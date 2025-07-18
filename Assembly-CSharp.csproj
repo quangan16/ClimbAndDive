@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\Player\StateMachine\MoveState.cs" />
     <Compile Include="Assets\JMO Assets\Toony Colors Pro\Scripts\TCP2_RuntimeUtils.cs" />
     <Compile Include="Assets\Scripts\Player\StateMachine\PlayerFiniteStateMachine.cs" />
+    <Compile Include="Assets\lol.cs" />
     <Compile Include="Assets\Scripts\Managers\DataManager.cs" />
     <Compile Include="Assets\Scripts\Managers\EffectManager.cs" />
     <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
@@ -67,7 +68,9 @@
     <Compile Include="Assets\Scripts\Player\StateMachine\LandingState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\JMO Assets\Toony Colors Pro\Scripts\TCP2_CameraDepth.cs" />
-    <Compile Include="Assets\lol.cs" />
+    <Compile Include="Assets\Scripts\UI\LadderUI.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IClimber.cs" />
+    <Compile Include="Assets\Scripts\UI\ClimbRewardUI.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Sources\Resources\shaders\tilesprogressive.shader" />
     <None Include="Assets\JMO Assets\Toony Colors Pro\Shaders 2.0 Generated\Examples\Default\Dissolve.shader" />
@@ -425,14 +428,14 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.42f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>D:\UnityProjects\ClimbAndDive\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>D:\UnityProjects\ClimbAndDive\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>D:\UnityProjects\ClimbAndDive\Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>D:\UnityProjects\ClimbAndDive\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.42f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

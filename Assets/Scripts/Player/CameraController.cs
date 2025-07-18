@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
         Vector2 swipe = input;
         freeLookCamera.m_XAxis.Value += swipe.x * orbitSensitivityX; // Horizontal rotation
         targetYAxisValue += swipe.y * orbitSensitivityY;
-        targetYAxisValue = Mathf.Clamp01(targetYAxisValue); // Keep within [0,1] for FreeLook Y-axis
+        // targetYAxisValue = Mathf.Clamp01(targetYAxisValue); // Keep within [0,1] for FreeLook Y-axis
         freeLookCamera.m_YAxis.Value = Mathf.Lerp(freeLookCamera.m_YAxis.Value, targetYAxisValue, Time.deltaTime * yAxisSmoothing);
     }
 

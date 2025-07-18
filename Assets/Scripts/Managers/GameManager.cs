@@ -3,17 +3,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager _instance;
+    private static GameManager _instance;
     public static GameManager Instance => _instance;
 
     public float climbCoin;
     public float coinCollectRate = 0.7f;
 
     public PlayerController player;
+    public Ladder ladder;
     public CameraController cameraController;
 
     public void Start()
     {
+        SetMaxFPS(60);
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
@@ -22,6 +24,12 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
+
+
+    public void SetMaxFPS(int maxFPS)
+    {
+        Application.targetFrameRate = maxFPS;
     }
 
     public void Update()
@@ -42,4 +50,6 @@ public class GameManager : MonoBehaviour
     {
         DataManager.Instance.AddCoin(collectCoinAmount);
     }
+
+
 }

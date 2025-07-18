@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text coinTxt;
-    // Start is called before the first frame update
-    void Start()
+    public static UIManager _instance;
+    public static UIManager Instance => _instance;
+    public void Awake()
     {
-        
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        coinTxt.text = Mathf.FloorToInt(GameManager.Instance.climbCoin).ToString();
-    }
 }

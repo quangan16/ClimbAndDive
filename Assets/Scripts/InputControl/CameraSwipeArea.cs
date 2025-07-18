@@ -34,7 +34,7 @@ public class CameraSwipeArea : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
 
 
-        prevPosition = eventData.position;
+        // prevPosition = eventData.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -63,7 +63,7 @@ public class CameraSwipeArea : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     public void OnPointerDown(PointerEventData eventData)
     {
         isPressing = true;
-        prevPosition = eventData.position;
+        // prevPosition = eventData.position;
         print("OnPointerDown");
     }
     // Vector2 prevTouchPos =  Vector2.zero;
